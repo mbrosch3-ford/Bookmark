@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   configure :development do
@@ -9,7 +8,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/' do
-    @bookmarks = ['http://www.ford.com', 'http://www.youtube.com']
+    @bookmarks = Bookmarks.all
     erb :index
   end
 
