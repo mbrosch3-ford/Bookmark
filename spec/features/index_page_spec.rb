@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 feature 'Index page' do
   scenario 'it shows the list of bookmarks' do
     visit '/'
